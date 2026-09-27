@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shreeshchandra Mishra — Web Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F6; --card:#FFFFFF; --line:#E4E1D8; --ink:#16181D; --soft:#5D6270;
+  --accent:#2F3B8C; --accent-bg:#EAEBF7; --warm:#E1552C;
+  --font-h:'Space Grotesk',system-ui,sans-serif; --font-b:system-ui,-apple-system,sans-serif; --font-m:'IBM Plex Mono',monospace;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+  --bg:#111318; --card:#181B22; --line:#2A2E38; --ink:#EDEDEF; --soft:#9CA1AE; --accent:#8B93E8; --accent-bg:#1E2140; --warm:#F0794F;
+}}
+:root[data-theme="dark"]{--bg:#111318; --card:#181B22; --line:#2A2E38; --ink:#EDEDEF; --soft:#9CA1AE; --accent:#8B93E8; --accent-bg:#1E2140; --warm:#F0794F;}
+*{box-sizing:border-box;}
+html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);line-height:1.55;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px;}
+a{color:var(--accent);}
+
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:10;padding-top:env(safe-area-inset-top,0px);}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:14px 22px;max-width:1040px;margin:0 auto;}
+.brand{font-family:var(--font-h);font-weight:700;font-size:17px;}
+.nav-links{display:flex;gap:18px;font-size:13px;font-family:var(--font-m);}
+.nav-links a{text-decoration:none;color:var(--soft);}
+.nav-links a:hover{color:var(--accent);}
+@media(max-width:640px){.nav-links{display:none;}}
+
+header.hero{padding:64px 0 40px;border-bottom:1px solid var(--line);}
+.kicker{font-family:var(--font-m);font-size:12px;color:var(--warm);letter-spacing:.05em;margin-bottom:10px;}
+h1{font-family:var(--font-h);font-size:clamp(32px,6vw,50px);margin:0 0 14px;letter-spacing:-0.01em;}
+.hero p{color:var(--soft);max-width:60ch;font-size:15.5px;}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+.btn{font-family:var(--font-m);font-size:12.5px;padding:9px 16px;border-radius:5px;text-decoration:none;border:1px solid var(--line);color:var(--ink);}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent);}
+.btn:hover{border-color:var(--accent);}
+
+section{padding:46px 0;border-bottom:1px solid var(--line);}
+.sec-label{font-family:var(--font-m);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:6px;}
+h2{font-family:var(--font-h);font-size:24px;margin:0 0 18px;}
+
+.skills{display:flex;flex-wrap:wrap;gap:8px;}
+.skill{font-family:var(--font-m);font-size:12.5px;background:var(--accent-bg);color:var(--accent);padding:6px 12px;border-radius:20px;}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.filter-btn{font-family:var(--font-m);font-size:12px;padding:6px 13px;border-radius:20px;border:1px solid var(--line);background:none;color:var(--soft);cursor:pointer;}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;transition:transform .15s ease,border-color .15s ease;}
+.card:hover{transform:translateY(-2px);border-color:var(--accent);}
+.card-tag{font-family:var(--font-m);font-size:10.5px;color:var(--warm);text-transform:uppercase;letter-spacing:.04em;}
+.card h3{font-family:var(--font-h);font-size:16px;margin:6px 0 6px;}
+.card p{font-size:13px;color:var(--soft);margin:0 0 10px;}
+.card a.visit{font-family:var(--font-m);font-size:12px;text-decoration:none;}
+.card a.visit:hover{text-decoration:underline;}
+
+.note{background:var(--accent-bg);border:1px solid var(--line);border-radius:6px;padding:12px 14px;font-size:12.5px;color:var(--ink);margin-bottom:18px;}
+.placeholder{border-style:dashed;opacity:.85;}
+
+footer{padding:36px 0 60px;text-align:center;}
+footer p{color:var(--soft);font-size:13px;}
+.contact-links{display:flex;gap:16px;justify-content:center;margin-top:10px;font-family:var(--font-m);font-size:13px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="brand">S. Mishra</span>
+  <div class="nav-links">
+    <a href="#projects">Live Projects</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#senior-living">Senior Living</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<header class="wrap hero">
+  <div class="kicker">/ WEB DEVELOPER · WORDPRESS · CRM · MARKETING TECH</div>
+  <h1>Shreeshchandra Mishra</h1>
+  <p>Full-stack WordPress developer building performant, launch-ready websites and the marketing-tech stack behind them — CRM integrations, custom plugins, CI/CD, and AI-assisted workflows for agency and senior living clients.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="mailto:mishrashree1993@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/shreesh-mishra-95950298" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://www.behance.net/mishrashreesh" target="_blank" rel="noopener">Behance</a>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="sec-label">Skills & Stack</div>
+  <div class="skills" id="skillsGrid"></div>
+</section>
+
+<section class="wrap" id="projects">
+  <div class="sec-label">Portfolio</div>
+  <h2>Live website projects</h2>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="projectGrid"></div>
+</section>
+
+<section class="wrap" id="capabilities">
+  <div class="sec-label">Core Capabilities</div>
+  <h2>Beyond the build — the full stack behind it</h2>
+  <div class="note">These describe the tools and workflows I work in day-to-day. Company-specific project names are placeholders (marked 🔧) — swap them for real, disclosable project details.</div>
+  <div class="grid" id="capGrid"></div>
+</section>
+
+<section class="wrap" id="senior-living">
+  <div class="sec-label">Industry Focus</div>
+  <h2>Senior living & agency work — Fountain Digital</h2>
+  <div class="note">Fountain Digital specializes in senior living marketing and, like most agencies in this space, keeps client names confidential in public case studies. Add real, disclosable client names/logos here once confirmed — the cards below are structured placeholders.</div>
+  <div class="grid" id="slGrid"></div>
+</section>
+
+<footer class="wrap" id="contact">
+  <p>Open to full-stack, CRM, and marketing-ops engineering roles.</p>
+  <div class="contact-links">
+    <a href="mailto:mishrashree1993@gmail.com">mishrashree1993@gmail.com</a>
+    <a href="tel:+918850651848">+91 8850651848</a>
+    <a href="https://www.linkedin.com/in/shreesh-mishra-95950298" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/mishrashreesh" target="_blank" rel="noopener">Behance</a>
+  </div>
+</footer>
+
+<script>
+const SKILLS = ["WordPress","HubSpot","ActiveDemand","Aline CRM","Google Analytics","WPEngine","Custom Gutenberg Blocks","REST APIs & Webhooks","GitHub Actions / CI-CD","NewRelic","Figma","WooCommerce","PHP","JavaScript","Multisite Networks","Claude / AI Workflows","SEO"];
+
+const PROJECTS = [
+ {n:"ITHENA Technologies", l:"https://ithena.ai/", tag:"WordPress"},
+ {n:"Virginia System of Care", l:"https://www.systemofcare.virginia.gov/", tag:"Government"},
+ {n:"Actis Technologies", l:"https://actis.co.in/", tag:"WordPress"},
+ {n:"Ooberpad", l:"https://www.ooberpad.com/", tag:"WooCommerce"},
+ {n:"AGD Bio", l:"https://agdbio.com/", tag:"WordPress"},
+ {n:"ERMA Japan", l:"https://www.erma.jp/", tag:"WordPress"},
+ {n:"ATS Academy", l:"https://academy.ats-global.com/", tag:"LMS"},
+ {n:"MOM Institute", l:"https://www.mom-institute.org/", tag:"WordPress"},
+ {n:"Posh Pets", l:"https://poshpets.in/", tag:"WooCommerce"},
+ {n:"Fugetron Corp", l:"https://www.fugetroncorp.com/", tag:"WordPress"},
+ {n:"ATS Jobs Portal", l:"https://jobs.ats-global.com/", tag:"WordPress"},
+ {n:"Sarla Tech", l:"https://www.sarlatech.com/", tag:"WordPress"},
+ {n:"ATS Teconomy", l:"https://www.ats-teconomy.com", tag:"WordPress"},
+ {n:"We Are Atlas", l:"https://weareatlas.com/", tag:"WordPress"},
+ {n:"Lean Scheduling", l:"https://lean-scheduling.com/", tag:"SaaS"},
+ {n:"Action Tour Guide", l:"https://actiontourguide.com/", tag:"WordPress"},
+ {n:"GuideAlong", l:"https://guidealong.com/", tag:"WooCommerce"},
+ {n:"Team3D", l:"https://team3d.it/", tag:"WordPress"},
+ {n:"The Team Companies", l:"https://theteamcompanies.com/", tag:"Multisite"},
+ {n:"AS Appliances", l:"https://asappliances.com.au/", tag:"WooCommerce"}
+];
+
+const CAPS = [
+ {tag:"CRM Integration", n:"🔧 Multi-CRM Lead Routing", d:"Connected HubSpot, ActiveDemand and Aline CRM into WordPress lead forms — deduping contacts and routing inquiries automatically."},
+ {tag:"Analytics", n:"🔧 GA4 + Custom Event Tracking", d:"Set up Google Analytics goal funnels, UTM strategy, and conversion tracking across paid landing pages."},
+ {tag:"Hosting & SPM", n:"🔧 WPEngine Server Management", d:"Managed staging → production deploys, caching rules, SPM alerts, and uptime on WPEngine-hosted sites."},
+ {tag:"Plugin Dev", n:"🔧 Custom Plugin Build", d:"Built a custom plugin from scratch for [feature] — hooks, custom post types, and an admin settings panel."},
+ {tag:"Forms & QA", n:"🔧 Form Integration & Testing", d:"Integrated Gravity Forms / custom forms with CRM webhooks, then QA-tested submission, validation and spam edge cases."},
+ {tag:"CI/CD", n:"🔧 GitHub Actions Pipeline", d:"Built a CI/CD pipeline — lint, build, staging deploy, and one-click production launch via GitHub Actions."},
+ {tag:"Gutenberg", n:"🔧 Custom Block from Scratch", d:"Authored a native Gutenberg block (React + block.json) for a reusable, editor-friendly content section."},
+ {tag:"Monitoring", n:"🔧 NewRelic Performance Watch", d:"Instrumented NewRelic APM to track page load, DB query time, and error rates post-launch."},
+ {tag:"Webhooks", n:"🔧 Custom Webhook Pipeline", d:"Built outbound webhooks connecting form submissions and CRM events to internal tooling."},
+ {tag:"AI Workflow", n:"🔧 Claude-Assisted Dev Workflow", d:"Used Claude for code review, QA test-case generation, and content/SEO drafting inside the build pipeline."},
+ {tag:"Internal Tools", n:"🔧 Internal Ops Dashboard", d:"Built an internal site/dashboard for the team to track launches, tickets, and site health across clients."},
+ {tag:"Multisite", n:"🔧 WordPress Multisite Network", d:"Configured and maintain a multisite network sharing themes/plugins across several client properties."},
+ {tag:"Design Handoff", n:"🔧 Figma → Build Support", d:"Partnered with design on Figma specs, translating components into pixel-accurate, responsive markup."}
+];
+
+const SL = [
+ {tag:"Senior Living", n:"🔧 Community Website Redesign", d:"Rebuilt a senior living community site for speed, local SEO, and inquiry-form conversion."},
+ {tag:"Senior Living", n:"🔧 Portfolio-Wide Launch", d:"Rolled out a templated site framework across multiple community locations for a senior living operator."},
+ {tag:"Senior Living", n:"🔧 CRM & Lead Nurture Setup", d:"Connected inquiry forms to CRM nurture flows to shorten move-in decision timelines."}
+];
+
+function renderSkills(){
+  document.getElementById('skillsGrid').innerHTML = SKILLS.map(s=>`<span class="skill">${s}</span>`).join('');
+}
+
+function renderProjects(filter){
+  const grid = document.getElementById('projectGrid');
+  const items = filter==='All' ? PROJECTS : PROJECTS.filter(p=>p.tag===filter);
+  grid.innerHTML = items.map(p=>`
+    <div class="card">
+      <span class="card-tag">${p.tag}</span>
+      <h3>${p.n}</h3>
+      <a class="visit" href="${p.l}" target="_blank" rel="noopener">Visit site →</a>
+    </div>`).join('');
+}
+
+function renderFilters(){
+  const tags = ['All', ...new Set(PROJECTS.map(p=>p.tag))];
+  const el = document.getElementById('filters');
+  el.innerHTML = tags.map((t,i)=>`<button class="filter-btn ${i===0?'active':''}" data-t="${t}">${t}</button>`).join('');
+  el.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      el.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects(btn.dataset.t);
+    });
+  });
+}
+
+function renderCaps(){
+  document.getElementById('capGrid').innerHTML = CAPS.map(c=>`
+    <div class="card placeholder">
+      <span class="card-tag">${c.tag}</span>
+      <h3>${c.n}</h3>
+      <p>${c.d}</p>
+    </div>`).join('');
+}
+
+function renderSL(){
+  document.getElementById('slGrid').innerHTML = SL.map(c=>`
+    <div class="card placeholder">
+      <span class="card-tag">${c.tag}</span>
+      <h3>${c.n}</h3>
+      <p>${c.d}</p>
+    </div>`).join('');
+}
+
+renderSkills(); renderFilters(); renderProjects('All'); renderCaps(); renderSL();
+</script>
+</body>
+</html>
