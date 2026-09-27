@@ -41,7 +41,6 @@ Full-stack WordPress developer building performant, launch-ready websites and th
 
 ## 🛠️ Core Capabilities
 
-> Placeholders below are marked with 🔧 — swap in real, disclosable project details as they're confirmed.
 
 - 🔧 **Multi-CRM Lead Routing** — Connected HubSpot, ActiveDemand and Aline CRM into WordPress lead forms, deduping contacts and routing inquiries automatically.
 - 🔧 **GA4 + Custom Event Tracking** — Google Analytics goal funnels, UTM strategy, and conversion tracking across paid landing pages.
