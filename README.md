@@ -60,8 +60,6 @@ Full-stack WordPress developer building performant, launch-ready websites and th
 
 ## 🏡 Senior Living & Agency Work — Fountain Digital
 
-> Fountain Digital specializes in senior living marketing and, like most agencies in this space, keeps client names confidential in public case studies. Named clients/logos will be added here once confirmed as disclosable.
-
 - 🔧 **Community Website Redesign** — Rebuilt a senior living community site for speed, local SEO, and inquiry-form conversion.
 - 🔧 **Portfolio-Wide Launch** — Rolled out a templated site framework across multiple community locations for a senior living operator.
 - 🔧 **CRM & Lead Nurture Setup** — Connected inquiry forms to CRM nurture flows to shorten move-in decision timelines.
